@@ -91,7 +91,7 @@ export default function Upload({ darkMode, toggleDarkMode }) {
     const formData = new FormData();
     formData.append('image', file);
 
-    const response = await fetch('http://localhost:8000/cash-to-text/', {
+    const response = await fetch('https://voxvision-backend.onrender.com/cash-to-text/', {
       method: 'POST',
       body: formData,
     });
@@ -120,7 +120,7 @@ export default function Upload({ darkMode, toggleDarkMode }) {
     const formData = new FormData();
     formData.append('image', file);
 
-    const response = await fetch('http://localhost:8000/image-to-text/', {
+    const response = await fetch('https://voxvision-backend.onrender.com/image-to-text/', {
       method: 'POST',
       body: formData,
     });
