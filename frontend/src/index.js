@@ -11,17 +11,12 @@ root.render(
   </React.StrictMode>
 );
 
-// ✅ Register Service Worker for PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('/sw.js')
-      .then((registration) => {
-        console.log('VoxVision SW registered:', registration.scope);
-      })
-      .catch((error) => {
-        console.error('VoxVision SW registration failed:', error);
-      });
+      .register('/sw.js', { scope: '/' })
+      .then((reg) => console.log('SW registered:', reg.scope))
+      .catch((err) => console.error('SW failed:', err));
   });
 }
 
