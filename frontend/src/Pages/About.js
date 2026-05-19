@@ -125,8 +125,21 @@ export default function About({ darkMode, toggleDarkMode }) {
           </h1>
         </header>
 
+
+
         {/* Content Sections */}
         <div className="about-content-grid">
+          {/* App Preview Image - Cinematic Showcase */}
+          <div className="about-app-preview-wrapper" aria-hidden="true">
+            <div className="about-app-preview-scanlines"></div>
+            <img
+              src="/about-app-preview.png"
+              alt=""
+              className="about-app-preview-img"
+            />
+            <div className="about-app-preview-overlay"></div>
+          </div>
+
           {/* Card 1: Intro */}
           <section className="about-card intro-card" tabIndex="0" aria-label="Introduction">
             <p>

@@ -3,12 +3,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+  background: #090d14 !important;
   transition: background 0.3s ease;
 }
 
 .order-page-wrapper.dark-mode {
-  background: linear-gradient(to bottom right, #1e293b, #0f172a);
+  background: #090d14 !important;
 }
 
 /* Order Container */
@@ -27,25 +27,25 @@
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: #67e8f9 !important;
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .order-page-wrapper.dark-mode .order-title {
-  color: #67e8f9;
+  color: #67e8f9 !important;
 }
 
 .order-description {
   text-align: center;
   font-size: 1.25rem;
-  color: #475569;
+  color: #cbd5e1 !important;
   transition: color 0.3s ease;
   margin-bottom: 4rem;
 }
 
 .order-page-wrapper.dark-mode .order-description {
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 /* Product Card Grid */
@@ -59,26 +59,29 @@
 
 /* Product Cards */
 .order-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(34, 211, 238, 0.2) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   padding: 3rem 2rem;
   border-radius: 1.5rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 3px solid #e0f2fe;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .order-page-wrapper.dark-mode .order-card {
-  background: linear-gradient(135deg, #1e3a8a, #0c4a6e);
-  border-color: #67e8f9;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(34, 211, 238, 0.2) !important;
 }
 
 .order-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.2);
+  border-color: #00E5FF !important;
 }
 
 .order-card-icon {
@@ -89,25 +92,25 @@
 .order-card-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: #67e8f9 !important;
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
 
 .order-page-wrapper.dark-mode .order-card-title {
-  color: #67e8f9;
+  color: #67e8f9 !important;
 }
 
 .order-card-price {
   font-size: 2rem;
   font-weight: 800;
-  color: #2563eb;
+  color: #38bdf8 !important;
   margin-bottom: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .order-page-wrapper.dark-mode .order-card-price {
-  color: #38bdf8;
+  color: #38bdf8 !important;
 }
 
 .order-card-features {
@@ -119,7 +122,7 @@
 
 .order-card-features li {
   font-size: 1.05rem;
-  color: #475569;
+  color: #cbd5e1 !important;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -128,7 +131,7 @@
 }
 
 .order-page-wrapper.dark-mode .order-card-features li {
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 .order-card-features li::before {

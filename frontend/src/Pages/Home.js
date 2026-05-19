@@ -23,11 +23,16 @@ export default function Home({ darkMode, toggleDarkMode }) {
   return (
     <>
     <div className={`home-container ${darkMode ? 'dark-mode' : ''}`}>
+      {/* Decorative Blur Circles for Mobile Background */}
+      <div className="mobile-bg-blur mobile-bg-blur-1" aria-hidden="true"></div>
+      <div className="mobile-bg-blur mobile-bg-blur-2" aria-hidden="true"></div>
+      <div className="mobile-bg-blur mobile-bg-blur-3" aria-hidden="true"></div>
+
       {/* Navigation */}
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ '--hero-bg-image': 'url(/home1.png)' }}>
         <div className="hero-content">
           <div className="hero-flex">
             {/* Left Column - Slogan */}
@@ -35,7 +40,7 @@ export default function Home({ darkMode, toggleDarkMode }) {
               <div className="hero-slogan-card">
                 <div className="hero-slogan-content">
                   <h2 className="slogan-heading">
-                    Redefining How<br />We Navigate.
+                    See the World<br />Through Sound
                   </h2>
                   <p className="slogan-subheading">
                     Smart Cash &amp; Document Reader

@@ -32,7 +32,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             &#9776;
           </button>
           
-          <div className="navbar-logo" onClick={() => handleNavigation('home')}>
+          <div className="navbar-logo">
             <img src="/voxvision-logo.png" alt="VoxVision Logo" className="navbar-logo-img" />
             <span className="navbar-logo-text creative-logo">VoxVision</span>
           </div>
@@ -73,15 +73,6 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   className="navbar-link"
                 >
                   Order
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#login" 
-                  onClick={(e) => { e.preventDefault(); handleNavigation('login'); }}
-                  className="navbar-link"
-                >
-                  Login/Register
                 </a>
               </li>
             </ul>
@@ -129,9 +120,6 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               </li>
               <li>
                 <a href="#order" role="button" onClick={(e) => { e.preventDefault(); handleNavigation('order'); }} className="navbar-link">Order</a>
-              </li>
-              <li>
-                <a href="#login" role="button" onClick={(e) => { e.preventDefault(); handleNavigation('login'); }} className="navbar-link">Login/Register</a>
               </li>
             </ul>
             <a

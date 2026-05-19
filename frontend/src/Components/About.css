@@ -40,13 +40,14 @@
 }
 
 .audio-btn {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  padding: 1.25rem 2rem;
-  border-radius: 12px;
+  padding: 0.9rem 1.75rem;
+  border-radius: 50px; /* Creative pill curve */
   border: 3px solid transparent;
   cursor: pointer;
   width: 100%;
+  max-width: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,17 +62,17 @@
 .about-feature-card:focus,
 .about-main-title:focus,
 .section-title:focus {
-  outline: 4px solid #fde047; /* Thick bright yellow outline */
+  outline: 4px solid #67e8f9; /* Thick cyan outline */
   outline-offset: 4px;
 }
 
 .start-btn {
-  background: #fde047; /* Bright yellow */
+  background: #67e8f9;
   color: #000000;
 }
 
 .start-btn:hover {
-  background: #facc15;
+  background: #22d3ee;
   transform: translateY(-2px);
 }
 
@@ -98,7 +99,399 @@
 /* Header */
 .about-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================================
+   Cinematic Hero Image
+   ========================================================= */
+.about-hero-cinematic {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.25), 0 0 120px rgba(0, 229, 255, 0.1);
+  border: 1.5px solid rgba(0, 229, 255, 0.35);
+  animation: heroGlow 3s ease-in-out infinite alternate;
+}
+
+.about-page-wrapper.dark-mode .about-hero-cinematic {
+  border-color: rgba(103, 232, 249, 0.35);
+  animation: heroGlowCyan 3s ease-in-out infinite alternate;
+}
+
+/* Scanlines overlay for a futuristic feel */
+.about-hero-scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.06) 3px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+}
+
+/* Floating badge at the bottom-center */
+.about-hero-floating-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(0, 229, 255, 0.6);
+  color: #00e5ff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.75rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+}
+
+.about-page-wrapper.dark-mode .about-hero-floating-badge {
+  border-color: rgba(103, 232, 249, 0.6);
+  color: #67e8f9;
+  box-shadow: 0 4px 20px rgba(103, 232, 249, 0.3);
+}
+
+/* Pulsing dot inside the badge */
+.hero-badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00e5ff;
+  display: inline-block;
+  animation: badgePulse 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.about-page-wrapper.dark-mode .hero-badge-dot {
+  background: #67e8f9;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+
+/* =========================================================
+   Hero Banner Image (legacy wrapper reused)
+   ========================================================= */
+.about-hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.25), 0 0 120px rgba(0, 229, 255, 0.1);
+  border: 1.5px solid rgba(0, 229, 255, 0.35);
+  animation: heroGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.2), 0 0 80px rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.25);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(0, 229, 255, 0.5), 0 0 160px rgba(0, 229, 255, 0.2);
+    border-color: rgba(0, 229, 255, 0.7);
+  }
+}
+
+.about-page-wrapper.dark-mode .about-hero-image-wrapper {
+  border-color: rgba(103, 232, 249, 0.35);
+  animation: heroGlowCyan 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlowCyan {
+  from {
+    box-shadow: 0 0 40px rgba(103, 232, 249, 0.2), 0 0 80px rgba(103, 232, 249, 0.08);
+    border-color: rgba(103, 232, 249, 0.25);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(103, 232, 249, 0.45), 0 0 160px rgba(103, 232, 249, 0.18);
+    border-color: rgba(103, 232, 249, 0.65);
+  }
+}
+
+.about-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-hero-image-wrapper:hover .about-hero-image {
+  transform: scale(1.03);
+}
+
+/* Fade-to-dark overlay at the bottom to blend into page */
+.about-hero-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, transparent, #090d16);
+  pointer-events: none;
+}
+
+.about-page-wrapper.dark-mode .about-hero-image-overlay {
+  background: linear-gradient(to bottom, transparent, #000000);
+}
+
+/* =========================================================
+   Team Illustration
+   ========================================================= */
+.about-team-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid rgba(103, 232, 249, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.about-page-wrapper.dark-mode .about-team-image-wrapper {
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.about-team-image {
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(1.15);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.about-team-image-wrapper:hover .about-team-image {
+  filter: brightness(1) saturate(1.3);
+  transform: scale(1.02);
+}
+
+/* Floating caption badge over the image */
+.about-team-image-caption {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(103, 232, 249, 0.6);
+  color: #67e8f9;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(103, 232, 249, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-page-wrapper.dark-mode .about-team-image-caption {
+  border-color: rgba(0, 229, 255, 0.6);
+  color: #00e5ff;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+}
+
+/* =========================================================
+   Intro + Team Image Split Layout
+   ========================================================= */
+.about-intro-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-intro-split {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+.about-intro-split .intro-card {
+  display: flex;
+  align-items: center;
+}
+
+/* Corner tag on team image */
+.about-team-corner-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(0, 229, 255, 0.5);
+  color: #00e5ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-page-wrapper.dark-mode .about-team-corner-tag {
+  border-color: rgba(103, 232, 249, 0.5);
+  color: #67e8f9;
+}
+
+/* =========================================================
+   App Preview Cinematic Showcase
+   ========================================================= */
+.about-app-preview-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid rgba(103, 232, 249, 0.4);
+  box-shadow:
+    0 0 50px rgba(103, 232, 249, 0.2),
+    0 0 100px rgba(103, 232, 249, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.6);
+  animation: appPreviewGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes appPreviewGlow {
+  from {
+    box-shadow:
+      0 0 30px rgba(103, 232, 249, 0.15),
+      0 0 60px rgba(103, 232, 249, 0.06),
+      0 20px 60px rgba(0, 0, 0, 0.6);
+    border-color: rgba(103, 232, 249, 0.25);
+  }
+  to {
+    box-shadow:
+      0 0 70px rgba(103, 232, 249, 0.45),
+      0 0 140px rgba(103, 232, 249, 0.18),
+      0 20px 60px rgba(0, 0, 0, 0.6);
+    border-color: rgba(103, 232, 249, 0.75);
+  }
+}
+
+/* Scanlines overlay */
+.about-app-preview-scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.05) 3px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+}
+
+/* The image itself */
+.about-app-preview-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.92) saturate(1.1);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.about-app-preview-wrapper:hover .about-app-preview-img {
+  transform: scale(1.03);
+  filter: brightness(1) saturate(1.2);
+}
+
+/* Bottom gradient fade into page */
+.about-app-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, #090d16);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.about-page-wrapper.dark-mode .about-app-preview-overlay {
+  background: linear-gradient(to bottom, transparent, #000000);
+}
+
+/* Floating badge */
+.about-app-preview-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(103, 232, 249, 0.65);
+  color: #67e8f9;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.75rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 4px 24px rgba(103, 232, 249, 0.3);
+}
+
+/* Pulsing live dot */
+.app-preview-badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #67e8f9;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: appDotPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes appDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(103, 232, 249, 0.5); }
+  50% { opacity: 0.5; transform: scale(1.5); box-shadow: 0 0 0 6px rgba(103, 232, 249, 0); }
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .about-app-preview-img {
+    max-height: 240px;
+  }
+  .about-app-preview-badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.25rem;
+    letter-spacing: 1px;
+  }
 }
 
 .about-main-title {
@@ -111,7 +504,7 @@
 }
 
 .about-page-wrapper.dark-mode .about-main-title {
-  color: #fde047; /* Bright Yellow in dark mode */
+  color: #67e8f9;
 }
 
 /* Content Grid - simple wide blocks */
@@ -132,16 +525,16 @@
 
 .about-page-wrapper.dark-mode .about-card {
   background: #0f172a;
-  border-color: #fde047; /* Extra high contrast borders in dark mode */
+  border-color: #67e8f9;
 }
 
 .about-card h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #fde047; /* Yellow headers */
+  color: #67e8f9;
   margin-top: 0;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(253, 224, 71, 0.2);
+  border-bottom: 2px solid rgba(103, 232, 249, 0.2);
   padding-bottom: 0.5rem;
 }
 
@@ -184,7 +577,7 @@
 }
 
 .about-page-wrapper.dark-mode .section-title {
-  color: #fde047;
+  color: #67e8f9;
 }
 
 .about-feature-cards {
@@ -214,7 +607,7 @@
 
 .about-page-wrapper.dark-mode .about-feature-card {
   background: #0f172a;
-  border-color: #fde047;
+  border-color: #67e8f9;
 }
 
 .feature-icon-wrapper {
@@ -232,7 +625,7 @@
 }
 
 .about-page-wrapper.dark-mode .feature-icon-wrapper {
-  background: rgba(253, 224, 71, 0.1);
+  background: rgba(103, 232, 249, 0.1);
 }
 
 .feature-text-wrapper h3 {
@@ -244,7 +637,7 @@
 }
 
 .about-page-wrapper.dark-mode .feature-text-wrapper h3 {
-  color: #fde047;
+  color: #67e8f9;
 }
 
 .feature-text-wrapper p {
